@@ -1,0 +1,84 @@
+.section1 button {
+  border: 3px solid hsla(0, 0%, 100%, 1);
+  font-family: var(--font-lato);
+  font-weight: 900;
+  font-size: 18px;
+  padding: 32px 40px;
+  cursor: pointer;
+  background: transparent;
+}
+.section1 button:nth-child(3) {
+  border: 3px solid black;
+  color: inherit;
+}
+.section1 .area1 {
+  position: relative;
+}
+.section1 .area1 button {
+  position: absolute;
+  bottom: 18%;
+  left: 40%;
+}
+.section1 .area {
+  display: flex;
+  position: relative;
+  background-color: var(--clr-pink);
+  height: 100%;
+}
+.section1 .area:nth-of-type(3) {
+  background-color: var(--clr-black);
+}
+.section1 .area:nth-of-type(4) {
+  background-color: var(--clr-white);
+}
+.section1 .area > div {
+  position: relative;
+  padding-top: 156px;
+  padding-left: 110px;
+}
+.section1 .area > div p:first-child {
+  position: absolute;
+  font-family: var(--font-dancingScripts);
+  font-weight: 400;
+  font-size: 96px;
+  top: 75px;
+}
+
+.section1 .area > div p:nth-child(2) {
+  font-family: var(--font-passion);
+  font-weight: 400;
+  font-size: 180px;
+  line-height: 140px;
+  margin-bottom: 97px;
+}
+.area .inner1 p:nth-child(2) {
+  color: hsla(0, 0%, 100%, 1);
+}
+.area .inner2 p:nth-child(2) {
+  color: var(--clr-pink);
+}
+.area .inner3 p:nth-child(2) {
+  color: var(--clr-pink);
+}
+
+.section1 .area:nth-of-type(2),
+.section1 .area button:nth-child(2) {
+  color: var(--clr-black);
+}
+.section1 .area:nth-of-type(3) {
+  color: var(--clr-white);
+}
+.section1 .area:nth-of-type(4) {
+  color: var(--clr-black);
+}
+
+.section1 .area:nth-of-type(2) img {
+  width: 58%;
+  height: 100%;
+}
+.section1 .area:nth-of-type(3) img {
+  width: 42%;
+}
+.section1 .area:nth-of-type(4) img {
+  width: 58%;
+}
