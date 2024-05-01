@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 100px;
+  background-color: var(--clr-pink);
+  color: var(--clr-white);
+  font-size: 18px;
+  font-family: var(--font-lato);
+  font-weight: 700;
+}
+.nav > div {
+  display: flex;
+  align-items: center;
+}
+.nav div:last-child {
+  gap: 40px;
+}
+.nav select {
+  border: none;
+  background: transparent;
+  color: var(--clr-white);
+}
+.nav select option {
+  background-color: var(--clr-pink);
+  padding: 2px;
+}
+
+.nav ul {
+  display: flex;
+  margin-left: 53px;
+  align-items: center;
+  gap: 48px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
+.nav li {
+  list-style-type: none;
+}
+.nav .navLogo {
+  width: 93px;
+  height: 104px;
+}
