@@ -38,7 +38,7 @@
 }
 .section1 .area > div p:first-child {
   position: absolute;
-  font-family: var(--font-dancingScripts);
+  font-family: var(--font-dancingScript);
   font-weight: 400;
   font-size: 96px;
   top: 75px;
