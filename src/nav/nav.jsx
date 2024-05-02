@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PersonCircle, Handbag } from "react-bootstrap-icons";
 import logo from "../assets/logo.svg";
 import styles from "./nav.module.css";
@@ -6,25 +7,25 @@ function Nav() {
   return (
     <nav className={styles.nav}>
       <div>
-        <a href="">
+        <Link href="/">
           <img className={styles.navLogo} src={logo} alt="Site Logo" />
-        </a>
+        </Link>
 
         <ul>
           <li>
-            <a href="">LUSH EXTENSIONS</a>
+            <Link to="/lushExtension"> LUSH EXTENSION</Link>
           </li>
           <li>
-            <a href="">WIGS</a>
+            <Link to="/">WIGS</Link>
           </li>
           <li>
-            <a href="">FRONTALS & CLOSURES</a>
+            <Link to="/">FRONTALS & CLOSURES</Link>
           </li>
           <li>
-            <a href="">HAIRCARE</a>
+            <Link to="/">HAIRCARE</Link>
           </li>
           <li>
-            <a href="">CONTACT US</a>
+            <Link to="/">CONTACT US</Link>
           </li>
         </ul>
       </div>
