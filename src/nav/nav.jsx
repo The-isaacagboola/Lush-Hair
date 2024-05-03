@@ -7,7 +7,7 @@ function Nav() {
   return (
     <nav className={styles.nav}>
       <div>
-        <Link href="/">
+        <Link to="/home">
           <img className={styles.navLogo} src={logo} alt="Site Logo" />
         </Link>
 
