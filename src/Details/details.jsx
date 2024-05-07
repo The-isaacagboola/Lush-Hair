@@ -7,11 +7,28 @@ import styles from "./details.module.css";
 
 function Details() {
   const [hairtype, setHairtype] = useState("human");
+  const [formDetails, setFormDetails] = useState({
+    type: "HUMAN HAIR",
+    texture: "DEEP WAVE",
+    bundle: "2 BUNDLES",
+    length: "24”",
+    quantity: 1,
+  });
+
   const { id } = useParams();
   const product = lushArray.find((item) => item.id == id);
 
+  //onchange
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setFormDetails((values) => ({ ...values, [name]: value }));
+    console.log(formDetails);
+  };
   return (
     <div>
+      {console.log(formDetails)}
       <img src={topImage} alt="image of 3 ladies" />
 
       <div className={styles.details}>
@@ -25,16 +42,20 @@ function Details() {
               email.
             </p>
 
-            <div className={styles.detailContainer}>
+            <form className={styles.detailContainer}>
               <div className={styles.flex}>
                 <h3 style={{ marginRight: "144px" }}>HAIR TYPE:</h3>
                 <ul>
                   <li>
                     <label>
                       <input
-                        onClick={() => setHairtype("human")}
+                        onClick={(e) => {
+                          setHairtype("human");
+                          handleChange(e);
+                        }}
                         type="radio"
-                        name="texture"
+                        defaultChecked
+                        name="type"
                         value={"HUMAN HAIR"}
                       />
                       <span>HUMAN HAIR</span>
@@ -43,9 +64,12 @@ function Details() {
                   <li>
                     <label>
                       <input
-                        onClick={() => setHairtype("synthetic")}
+                        onClick={(e) => {
+                          setHairtype("synthetic");
+                          handleChange(e);
+                        }}
                         type="radio"
-                        name="texture"
+                        name="type"
                         value={"SYNTHETIC HAIR"}
                       />
                       <span>SYNTHETIC HAIR</span>
@@ -62,7 +86,9 @@ function Details() {
                       <li>
                         <label>
                           <input
+                            onClick={handleChange}
                             type="radio"
+                            defaultChecked
                             name="texture"
                             value="LOOSE WAVE"
                           />
@@ -72,6 +98,7 @@ function Details() {
                       <li>
                         <label>
                           <input
+                            onClick={handleChange}
                             type="radio"
                             name="texture"
                             value="DEEP WAVE"
@@ -87,19 +114,35 @@ function Details() {
                     <ul>
                       <li>
                         <label>
-                          <input type="radio" name="bundle" value="2 BUNDLES" />
+                          <input
+                            type="radio"
+                            onClick={handleChange}
+                            name="bundle"
+                            value="2 BUNDLES"
+                          />
                           <span>2 BUNDLES</span>
                         </label>
                       </li>
                       <li>
                         <label>
-                          <input type="radio" name="bundle" value="3 BUNDLES" />
+                          <input
+                            type="radio"
+                            onClick={handleChange}
+                            defaultChecked
+                            name="bundle"
+                            value="3 BUNDLES"
+                          />
                           <span>3 BUNDLES</span>
                         </label>
                       </li>
                       <li>
                         <label>
-                          <input type="radio" name="bundle" value="3+" />
+                          <input
+                            type="radio"
+                            onClick={handleChange}
+                            name="bundle"
+                            value="3+"
+                          />
                           <span>3+</span>
                         </label>
                       </li>
@@ -113,31 +156,57 @@ function Details() {
                 <ul style={{ maxWidth: "450px" }}>
                   <li>
                     <label>
-                      <input type="radio" name="length" value="16”" />
+                      <input
+                        type="radio"
+                        onClick={handleChange}
+                        name="length"
+                        value="16”"
+                      />
                       <span>16”</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="length" value="18”" />
+                      <input
+                        type="radio"
+                        onClick={handleChange}
+                        name="length"
+                        value="18”"
+                      />
                       <span>18”</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="length" value="20”" />
+                      <input
+                        type="radio"
+                        onClick={handleChange}
+                        name="length"
+                        value="20”"
+                      />
                       <span>20”</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="length" value="22”" />
+                      <input
+                        type="radio"
+                        onClick={handleChange}
+                        name="length"
+                        value="22”"
+                      />
                       <span>22”</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="length" value="24”" />
+                      <input
+                        type="radio"
+                        onClick={handleChange}
+                        defaultChecked
+                        name="length"
+                        value="24”"
+                      />
                       <span>24”</span>
                     </label>
                   </li>
@@ -147,7 +216,7 @@ function Details() {
               <div className={styles.flex}>
                 <h3 style={{ marginRight: "144px" }}>QUANTITY:</h3>
                 <select>
-                  <option selected value="1">
+                  <option defaultChecked value="1">
                     1
                   </option>
                   <option value="2">2</option>
@@ -161,7 +230,7 @@ function Details() {
                   <option value="10">10</option>
                 </select>
               </div>
-            </div>
+            </form>
           </div>
           <div className={styles.amount}>
             <h3>TOTAL AMOUNT: </h3>
@@ -170,8 +239,8 @@ function Details() {
         </div>
       </div>
 
-      <div>
-        <Link to="">
+      <div className={styles.checkoutBtn}>
+        <Link to="/checkout" state={{ formDetails }}>
           <button> GO TO CHECKOUT</button>
         </Link>
 

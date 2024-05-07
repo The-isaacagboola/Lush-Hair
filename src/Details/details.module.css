@@ -78,4 +78,22 @@
 }
 .details input[type="radio"] {
   opacity: 0;
+  width: 0;
+  height: 0;
+}
+.checkoutBtn {
+  display: "flex";
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.checkoutBtn button:first-child {
+  padding: 25px 30px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.checkoutBtn button:last-child {
+  /* padding: 25px 20px;
+  cursor: pointer;
+  border: none;
+  background: transparent; */
 }
