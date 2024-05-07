@@ -69,3 +69,8 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+
+body {
+  font-family: var(--font-lato);
+  font-weight: 400;
+}

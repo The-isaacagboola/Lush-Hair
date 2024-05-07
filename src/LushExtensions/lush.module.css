@@ -1,20 +1,26 @@
+.lush .headDiv {
+  padding: 140px 220px 120px 220px;
+  background-color: var(--clr-pink);
+}
 .lush h1 {
   font-family: var(--font-passion);
-  font-size: 100px;
+  font-size: 120px;
   line-height: 96px;
   font-weight: 400;
-  padding-top: 120px;
+  /* padding-top: 120px; */
 }
 .lush .head {
   color: var(--clr-white);
-  background-color: var(--clr-pink);
-  padding-left: 200px;
+  /* background-color: var(--clr-pink); */
+  /* padding-left: 200px; */
 }
 
 .lush .head p {
   max-width: 800px;
   margin-top: 30px;
   color: var(--clr-black);
+  line-height: 28px;
+  font-weight: 600;
 }
 
 .lush .head button {
@@ -26,5 +32,42 @@
   margin-top: 60px;
   border: 3px solid var(--clr-black);
   cursor: pointer;
-  margin-bottom: 140px;
+}
+.lush .productContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-white);
+  margin: 144px 0 190px 0;
+  padding: 0 220px;
+}
+.lush .product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1430px;
+  height: max-content;
+  gap: 80px;
+}
+.lush .product img {
+  width: 406px;
+  height: 406px;
+  object-fit: cover;
+  object-position: top;
+}
+.lush .product h3 {
+  font-family: var(--font-passion);
+  font-size: 36px;
+  margin-top: 30px;
+  line-height: 38px;
+  margin-bottom: 8px;
+}
+.lush .product p {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.lush .product .link {
+  color: var(--clr-black);
+  font-weight: 900;
 }
