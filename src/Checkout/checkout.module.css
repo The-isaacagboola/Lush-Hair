@@ -1,0 +1,53 @@
+.product {
+  display: flex;
+  padding: 22px;
+  border: 1px solid hsla(0, 0%, 77%, 1);
+  gap: 32px;
+  align-items: center;
+}
+.product img {
+  width: 265px;
+  height: 355px;
+  object-fit: cover;
+  object-position: top;
+}
+.product h2 {
+  font-size: 36px;
+  font-family: var(--font-passion);
+  /* font-weight: 900; */
+}
+.product .price {
+  font-size: 24px;
+  font-family: var(--font-lato);
+  font-weight: 900;
+}
+.product h3 {
+  display: flex;
+  gap: 1rem;
+  font-size: 18px;
+  font-family: var(--font-lato);
+  font-weight: 900;
+}
+.product h3 span {
+  font-weight: 400;
+}
+.product .specs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 140px;
+  gap: 24px;
+}
+.product .specs .removeBtn {
+  position: absolute;
+  font-family: var(--font-lato);
+  font-size: 18px;
+  font-weight: 900;
+  right: 0;
+  bottom: -30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+}

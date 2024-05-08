@@ -34,10 +34,7 @@ function LushExtension() {
                 <img src={item.image} alt="image" />
                 <h3> {item.name}</h3>
                 <p>{item.price}</p>
-                <Link className={styles.link} to="/">
-                  {" "}
-                  {"View Product".toUpperCase()}
-                </Link>
+                <p className={styles.link}>{"View Product".toUpperCase()}</p>
               </div>
             </Link>
           ))}

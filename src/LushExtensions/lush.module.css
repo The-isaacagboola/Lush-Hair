@@ -70,4 +70,5 @@
 .lush .product .link {
   color: var(--clr-black);
   font-weight: 900;
+  text-decoration: underline;
 }

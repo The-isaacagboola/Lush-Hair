@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import lushArray from "../LushExtensions/products";
@@ -15,6 +15,12 @@ function Details() {
     quantity: 1,
   });
 
+  useEffect(() => {
+    localStorage.removeItem("bag");
+  }, []);
+
+  const [bag, setBag] = useState(JSON.parse(localStorage.getItem("bag")) || []);
+
   const { id } = useParams();
   const product = lushArray.find((item) => item.id == id);
 
@@ -28,7 +34,6 @@ function Details() {
   };
   return (
     <div>
-      {console.log(formDetails)}
       <img src={topImage} alt="image of 3 ladies" />
 
       <div className={styles.details}>
@@ -215,7 +220,7 @@ function Details() {
 
               <div className={styles.flex}>
                 <h3 style={{ marginRight: "144px" }}>QUANTITY:</h3>
-                <select>
+                <select name="quantity" onChange={handleChange}>
                   <option defaultChecked value="1">
                     1
                   </option>
@@ -244,10 +249,21 @@ function Details() {
           <button> GO TO CHECKOUT</button>
         </Link>
 
-        <button>ADD TO CART</button>
+        <button
+          onClick={() => {
+            const mutBag = [...bag];
+            mutBag.push({ name: product.name, ...formDetails });
+            setBag(mutBag);
+            localStorage.setItem("bag", JSON.stringify(mutBag));
+            console.log(bag);
+          }}
+          className={styles.btn2}
+        >
+          ADD TO CART
+        </button>
       </div>
 
-      <div>
+      <div className={styles.decription}>
         <h3>DESCRIPTION</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a erat
