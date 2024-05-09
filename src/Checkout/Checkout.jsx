@@ -1,4 +1,5 @@
 // import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "./checkout.module.css";
 import Billing from "./Billing";
@@ -43,7 +44,9 @@ function Checkout() {
                   }}
                 >
                   <h2>{item.name}</h2>
-                  <p className={styles.price}>$125.00</p>
+                  <p className={styles.price}>
+                    ${item.staticPrice * item.quantity}.00
+                  </p>
                 </div>
 
                 <div className={styles.specs}>
@@ -83,7 +86,17 @@ function Checkout() {
           );
         })}
       </div>
-      <Billing />
+      <Billing bag={[...bag]} />
+      <Link
+        to="/"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textDecoration: "none",
+        }}
+      >
+        <button className={styles.checkBtn}>CHECKOUT</button>
+      </Link>
     </>
   );
 }

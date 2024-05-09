@@ -7,6 +7,7 @@ import styles from "./details.module.css";
 
 function Details() {
   const [hairtype, setHairtype] = useState("human");
+  const [quantity, setQuantity] = useState(1);
   const [formDetails, setFormDetails] = useState({
     type: "HUMAN HAIR",
     texture: "DEEP WAVE",
@@ -216,7 +217,13 @@ function Details() {
 
               <div className={styles.flex}>
                 <h3 style={{ marginRight: "144px" }}>QUANTITY:</h3>
-                <select name="quantity" onChange={handleChange}>
+                <select
+                  name="quantity"
+                  onChange={(e) => {
+                    handleChange(e);
+                    setQuantity(e.target.value);
+                  }}
+                >
                   <option defaultChecked value="1">
                     1
                   </option>
@@ -235,7 +242,7 @@ function Details() {
           </div>
           <div className={styles.amount}>
             <h3>TOTAL AMOUNT: </h3>
-            <p>$324.00</p>
+            <p> ${product.staticPrice * quantity}.00</p>
           </div>
         </div>
       </div>
@@ -252,6 +259,7 @@ function Details() {
               id: product.id,
               name: product.name,
               image: product.image,
+              staticPrice: product.staticPrice,
               ...formDetails,
             });
             setBag(mutBag);

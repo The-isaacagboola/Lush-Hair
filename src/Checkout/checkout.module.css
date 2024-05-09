@@ -52,3 +52,12 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.checkBtn {
+  font-family: var(--font-lato);
+  font-weight: 900;
+  font-size: 18px;
+  margin: 40px 0 120px 0;
+  padding: 28px 34px;
+  cursor: pointer;
+  background-color: transparent;
+}
