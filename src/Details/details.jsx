@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import lushArray from "../LushExtensions/products";
@@ -15,10 +15,6 @@ function Details() {
     quantity: 1,
   });
 
-  useEffect(() => {
-    localStorage.removeItem("bag");
-  }, []);
-
   const [bag, setBag] = useState(JSON.parse(localStorage.getItem("bag")) || []);
 
   const { id } = useParams();
@@ -30,7 +26,7 @@ function Details() {
     const value = event.target.value;
 
     setFormDetails((values) => ({ ...values, [name]: value }));
-    console.log(formDetails);
+    // console.log(formDetails);
   };
   return (
     <div>
@@ -252,7 +248,12 @@ function Details() {
         <button
           onClick={() => {
             const mutBag = [...bag];
-            mutBag.push({ name: product.name, ...formDetails });
+            mutBag.push({
+              id: product.id,
+              name: product.name,
+              image: product.image,
+              ...formDetails,
+            });
             setBag(mutBag);
             localStorage.setItem("bag", JSON.stringify(mutBag));
             console.log(bag);

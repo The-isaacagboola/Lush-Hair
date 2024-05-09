@@ -4,6 +4,7 @@
   border: 1px solid hsla(0, 0%, 77%, 1);
   gap: 32px;
   align-items: center;
+  margin-bottom: 24px;
 }
 .product img {
   width: 265px;

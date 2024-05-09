@@ -6,8 +6,13 @@ import Footer from "./Footer/Footer";
 import LushExtension from "./LushExtensions/LushExtension";
 import Details from "./Details/details";
 import Checkout from "./Checkout/Checkout";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    localStorage.removeItem("bag");
+  }, []);
+
   return (
     <BrowserRouter>
       <Nav />
