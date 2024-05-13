@@ -1,0 +1,16 @@
+.success {
+  padding: 140px 0 140px 200px;
+}
+.success h1 {
+  font-size: 110px;
+  font-family: var(--font-passion);
+  color: var(--clr-pink);
+  line-height: 96px;
+  max-width: 920px;
+  margin-bottom: 24px;
+}
+.success p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+}

@@ -37,17 +37,15 @@
 /* PLACE ORDER STYLES */
 
 .billDiv {
-  width: 40%;
-  display: flex;
+  background-color: var(--clr-pink);
+  margin-bottom: 40px;
 }
 .billDiv > div {
   display: flex;
   padding: 20px 30px;
-  width: 100%;
   height: max-content;
   flex-direction: column;
   gap: 24px;
-  background-color: var(--clr-pink);
 }
 
 .billDiv .billingOrder p {

@@ -8,6 +8,7 @@ import Details from "./Details/details";
 import Checkout from "./Checkout/Checkout";
 import { useEffect } from "react";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
+import Success from "./success/Success";
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/details/:id" element={<Details />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout/place-order" element={<PlaceOrder />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
       <Footer />
     </BrowserRouter>

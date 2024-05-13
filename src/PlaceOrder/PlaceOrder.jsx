@@ -1,12 +1,18 @@
 import styles from "./place.module.css";
 import Billing from "../Checkout/Billing";
+import paymentCircle from "../assets/paymentCircle.svg";
+import verve from "../assets/verve.svg";
+import master from "../assets/master.svg";
+import visa from "../assets/visa.svg";
+import paystack from "../assets/paystack.svg";
+import { Link } from "react-router-dom";
 function PlaceOrder() {
   const bag = JSON.parse(localStorage.getItem("bag"));
   console.log(bag);
   return (
     <div className={styles.placeOrder}>
       <h1>PLACE ORDER</h1>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", gap: "100px" }}>
         <div className={styles.inputs}>
           <div className={styles.relatives}>
             <label htmlFor="firstName">FIRST NAME</label>
@@ -41,8 +47,25 @@ function PlaceOrder() {
             <input type="text" name="phoneNumber" />
           </div>
         </div>
-        {bag ? <Billing variant="billDiv" bag={[...bag]} /> : null}
+        <div style={{ width: "40%" }}>
+          {bag ? <Billing variant="billDiv" bag={[...bag]} /> : null}
+
+          <div className={styles.paypoint}>
+            <img src={paymentCircle} alt="design image" />
+            <p>PAYSTACK DEBIT/CREDIT CARD</p>
+          </div>
+          <div className={styles.cards}>
+            <img src={master} alt="mastercard" />
+            <img src={paystack} alt="paystack payment option" />
+            <img src={verve} alt="vervecard" />{" "}
+            <img src={visa} alt="visacard" />
+          </div>
+        </div>
       </div>
+
+      <Link to="/success">
+        <button className={styles.placeBtn}>PLACE ORDER</button>
+      </Link>
     </div>
   );
 }
