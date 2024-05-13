@@ -86,9 +86,9 @@ function Checkout() {
           );
         })}
       </div>
-      <Billing bag={[...bag]} />
+      <Billing bag={[...bag]} variant="billingContainer" />
       <Link
-        to="/"
+        to="/checkout/place-order"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -100,6 +100,4 @@ function Checkout() {
     </>
   );
 }
-
 export default Checkout;
-//populate the bag from details page and populate the html of the bag with them

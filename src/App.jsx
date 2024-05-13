@@ -7,6 +7,7 @@ import LushExtension from "./LushExtensions/LushExtension";
 import Details from "./Details/details";
 import Checkout from "./Checkout/Checkout";
 import { useEffect } from "react";
+import PlaceOrder from "./PlaceOrder/PlaceOrder";
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/lushextension" element={<LushExtension />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/place-order" element={<PlaceOrder />} />
       </Routes>
       <Footer />
     </BrowserRouter>

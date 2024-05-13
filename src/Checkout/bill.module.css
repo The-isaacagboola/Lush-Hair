@@ -9,7 +9,7 @@
   font-family: var(--font-lato);
   font-weight: 900;
 }
-.billing {
+.billingContainer > .billing {
   display: flex;
   padding: 42px 30px;
   background-color: var(--clr-pink);
@@ -17,16 +17,49 @@
   width: 30%;
   flex-direction: column;
 }
-.billing p {
+.billingContainer .billDiv .billing {
+  width: 60%;
+}
+.billingContainer .billing p {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-.billing p span {
+.billingContainer .billing p span {
   font-size: 24px;
 }
-.billing .divLine {
+.billingContainer .billing .divLine {
+  width: 100%;
+  height: 2px;
+  background-color: hsla(0, 0%, 0%, 1);
+}
+/* PLACE ORDER STYLES */
+
+.billDiv {
+  width: 40%;
+  display: flex;
+}
+.billDiv > div {
+  display: flex;
+  padding: 20px 30px;
+  width: 100%;
+  height: max-content;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--clr-pink);
+}
+
+.billDiv .billingOrder p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.billDiv .billingOrder p span {
+  font-size: 24px;
+}
+.billDiv .billingOrder .divLine {
   width: 100%;
   height: 2px;
   background-color: hsla(0, 0%, 0%, 1);

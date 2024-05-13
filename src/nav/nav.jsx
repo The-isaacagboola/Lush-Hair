@@ -16,7 +16,7 @@ function Nav() {
             <Link to="/lushExtension"> LUSH EXTENSION</Link>
           </li>
           <li>
-            <Link to="/">WIGS</Link>
+            <Link to="/lushExtension">WIGS</Link>
           </li>
           <li>
             <Link to="/">FRONTALS & CLOSURES</Link>
@@ -35,14 +35,14 @@ function Nav() {
           <option value="NGN">{"NGN (#)"}</option>
           <option value="EURO">{"EURO (£)"}</option>
         </select>
-        <a href="">
+        <Link to="">
           {" "}
           <PersonCircle size={24} />{" "}
-        </a>
-        <a href="">
+        </Link>
+        <Link to="/checkout">
           {" "}
           <Handbag size={24} />{" "}
-        </a>
+        </Link>
       </div>
     </nav>
   );

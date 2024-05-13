@@ -1,0 +1,38 @@
+.placeOrder {
+  padding: 140px 200px;
+  font-family: var(--lato);
+  font-size: 18px;
+  font-weight: 900;
+}
+.placeOrder h1 {
+  margin-bottom: 80px;
+  font-size: 100px;
+  font-family: var(--font-passion);
+  color: var(--clr-pink);
+  line-height: 96px;
+  font-weight: 400;
+}
+.placeOrder .inputs {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 60%;
+}
+.placeOrder .inputs input {
+  margin-top: 10px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid hsla(0, 0%, 0%, 1);
+  cursor: pointer;
+}
+
+.placeOrder .relatives {
+  position: relative;
+  margin-bottom: 50px;
+}
+.placeOrder label {
+  position: absolute;
+  top: -25px;
+  left: 0;
+}

@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import styles from "./bill.module.css";
-// eslint-disable-next-line react/prop-types
-function Billing(bag) {
-  const element = [...bag.bag];
+
+function Billing(props) {
+  const element = [...props.bag];
+  const variant = props.variant;
   const [subTotal, setSubTotal] = useState(0);
   const [vat, setVat] = useState(6.25);
   const [grand, setGrand] = useState(vat + subTotal);
@@ -21,9 +23,20 @@ function Billing(bag) {
     setGrand(vat + subTotal);
   }, [subTotal, vat]);
 
+  console.log(variant);
   return (
-    <div className={styles.billingContainer}>
-      <div className={styles.billing}>
+    <div
+      className={
+        variant === "billingContainer"
+          ? styles.billingContainer
+          : styles.billDiv
+      }
+    >
+      <div
+        className={
+          variant === "billingContainer" ? styles.billing : styles.billingOrder
+        }
+      >
         <p>
           SUB-TOTAL <span>${subTotal}.00</span>
         </p>
